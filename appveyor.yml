@@ -16,13 +16,13 @@ for:
         only:
             - master
     build_script:
-        - npm run publish_production
+        - npm run publish-production
 -
     branches:
         only:
             - develop
     build_script:
-        - npm run publish_stage
+        - npm run publish-stage
 
 # This will build based on `CONFIG` environment variable
 
