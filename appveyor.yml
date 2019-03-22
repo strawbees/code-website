@@ -7,8 +7,7 @@ platform:
     - x64
 
 install:
-    - npm ci --only=production
-    - npm install
+    - npm install --production
 
 # defined specific build configs for different branches
 for:
