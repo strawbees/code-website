@@ -1,0 +1,22 @@
+{
+  "name": "code-website",
+  "version": "0.1.0",
+  "description": "Website for Strawbees CODE",
+  "main": "main.js",
+  "scripts": {
+    "publish-stage": "strawbees-s3-publisher --source ./node_modules/@strawbees/code-ui/out/web_stage",
+    "publish-production": "strawbees-s3-publisher --source ./node_modules/@strawbees/code-ui/out/web_production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/strawbees/code-website.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/strawbees/code-website/issues"
+  },
+  "homepage": "https://github.com/strawbees/code-website#readme",
+  "dependencies": {
+    "@strawbees/s3-publisher": "^0.1.0"
+  }
+}

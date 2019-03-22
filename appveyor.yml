@@ -1,0 +1,37 @@
+image: Ubuntu
+
+environment:
+    nodejs_version: 11.0.0
+
+platform:
+    - x64
+
+install:
+    - npm ci --only=production
+    - npm install
+
+# defined specific build configs for different branches
+for:
+-
+    branches:
+        only:
+            - master
+    build_script:
+        - npm run publish_production
+-
+    branches:
+        only:
+            - develop
+    build_script:
+        - npm run publish_stage
+
+# This will build based on `CONFIG` environment variable
+
+version: "{build}"
+
+skip_tags: true
+
+branches:
+    only:
+        - master
+        - develop
