@@ -3,9 +3,9 @@ image: Ubuntu1804
 platform:
     - x64
 
-stack: node 11
-
 install:
+    - nvm use v11
+    - nvm alias default v11
     - npm ci --only=production
     - npm install
 
