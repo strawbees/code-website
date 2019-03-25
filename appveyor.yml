@@ -6,7 +6,7 @@ platform:
 install:
     - nvm use v11
     - npm ci --only=production
-    - npm install
+    - npm install --production
 
 # defined specific build configs for different branches
 for:
@@ -15,13 +15,13 @@ for:
         only:
             - master
     build_script:
-        - npm run publish_production
+        - npm run publish-production
 -
     branches:
         only:
             - develop
     build_script:
-        - npm run publish_stage
+        - npm run publish-stage
 -
     branches:
         only:
@@ -29,7 +29,7 @@ for:
     environment:
         S3_BUCKET: strawbees-test
     build_script:
-        - npm run publish_stage
+        - npm run publish-stage
 
 # This will build based on `CONFIG` environment variable
 
