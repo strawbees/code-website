@@ -4,8 +4,8 @@
   "description": "Website for Strawbees CODE",
   "main": "main.js",
   "scripts": {
-    "publish-stage": "strawbees-s3-publisher --source ./node_modules/@strawbees/code-ui/out/web_stage",
-    "publish-production": "strawbees-s3-publisher --source ./node_modules/@strawbees/code-ui/out/web_production"
+    "publish-stage": "strawbees-s3-publisher --region us-east-1 --bucket strawbees-code-stage --source ./node_modules/@strawbees/code-ui/out/web_stage --sync",
+    "publish-production": "strawbees-s3-publisher --region us-east-1 --bucket strawbees-code-production --source ./node_modules/@strawbees/code-ui/out/web_production --sync"
   },
   "repository": {
     "type": "git",
