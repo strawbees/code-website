@@ -1,13 +1,11 @@
-image: Ubuntu
-
-environment:
-    nodejs_version: 11.0.0
+image: Ubuntu1804
 
 platform:
     - x64
 
 install:
-    - npm install --production
+    - nvm use v11
+    - npm ci --only=production
 
 # defined specific build configs for different branches
 for:
@@ -23,6 +21,14 @@ for:
             - develop
     build_script:
         - npm run publish-stage
+-
+    branches:
+        only:
+            - /feature*/
+    environment:
+        S3_BUCKET: strawbees-test
+    build_script:
+        - npm run publish-stage
 
 # This will build based on `CONFIG` environment variable
 
@@ -34,3 +40,4 @@ branches:
     only:
         - master
         - develop
+        - /feature*/
