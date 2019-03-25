@@ -18,6 +18,6 @@
   "homepage": "https://github.com/strawbees/code-website#readme",
   "dependencies": {
     "@strawbees/code-ui": "^1.3.14-prerelease.4",
-    "@strawbees/s3-publisher": "^0.1.0"
+    "@strawbees/s3-publisher": "^0.1.1"
   }
 }
