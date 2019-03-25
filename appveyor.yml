@@ -6,7 +6,6 @@ platform:
 install:
     - nvm use v11
     - npm ci --only=production
-    - npm install --production
 
 # defined specific build configs for different branches
 for:
