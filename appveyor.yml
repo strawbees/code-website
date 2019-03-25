@@ -5,7 +5,6 @@ platform:
 
 install:
     - nvm use v11
-    - nvm alias default v11
     - npm ci --only=production
     - npm install
 
@@ -21,6 +20,14 @@ for:
     branches:
         only:
             - develop
+    build_script:
+        - npm run publish_stage
+-
+    branches:
+        only:
+            - /feature*/
+    environment:
+        S3_BUCKET: strawbees-test
     build_script:
         - npm run publish_stage
 
