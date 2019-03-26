@@ -19,8 +19,10 @@ for:
     branches:
         only:
             - develop
-    build_script:
-        - npm instal strawbees/code-ui#develop
+    install:
+        - nvm use v11
+        - npm ci --only=production
+        - npm install strawbees/code-ui#develop
     deploy_script:
         - npm run publish-stage
 -
