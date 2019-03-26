@@ -31,11 +31,13 @@ for:
         - npm link
         - cd ..
         - npm link @strawbees/code-ui
+    build_script:
+        - npm run build-develop
+    deploy_script:
+        - npm run publish-develop
     on_finish:
         - sh: export APPVEYOR_SSH_BLOCK=true
         - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
-    deploy_script:
-        - npm run publish-stage
 -
     branches:
         only:

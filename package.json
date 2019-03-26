@@ -4,7 +4,7 @@
   "description": "Website for Strawbees CODE",
   "main": "main.js",
   "scripts": {
-    "build-develop": "strawbees-code-ui-build",
+    "build-develop": "CONFIG=web_stage strawbees-code-ui-build",
     "publish-develop": "strawbees-s3-publisher --region us-east-1 --bucket strawbees-code-stage --source ./node_modules/@strawbees/code-ui/out --sync",
     "publish-stage": "strawbees-s3-publisher --region us-east-1 --bucket strawbees-code-stage --source ./node_modules/@strawbees/code-ui/out/web_stage --sync",
     "publish-production": "strawbees-s3-publisher --region us-east-1 --bucket strawbees-code-production --source ./node_modules/@strawbees/code-ui/out/web_production --sync"
