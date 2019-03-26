@@ -7,6 +7,9 @@ install:
     - nvm use v11
     - npm ci --only=production
 
+build_script:
+    - echo "nothing to build"
+
 # defined specific build configs for different branches
 for:
 -
