@@ -26,6 +26,9 @@ for:
         - nvm use v11
         - npm ci --only=production
         - npm install strawbees/code-ui#develop
+    on_finish:
+        - sh: export APPVEYOR_SSH_BLOCK=true
+        - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
     deploy_script:
         - npm run publish-stage
 -
