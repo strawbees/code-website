@@ -35,9 +35,6 @@ for:
         - npm run build-develop
     deploy_script:
         - npm run publish-develop
-    on_finish:
-        - sh: export APPVEYOR_SSH_BLOCK=true
-        - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
 -
     branches:
         only:
