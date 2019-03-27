@@ -7,6 +7,8 @@ install:
     - nvm use v11
     - npm ci --only=production
 
+skip_tags: true
+
 build_script:
     - echo "nothing to build"
 
