@@ -1,14 +1,14 @@
-image: Ubuntu
-
-environment:
-    nodejs_version: 11.0.0
+image: Ubuntu1804
 
 platform:
     - x64
 
 install:
+    - nvm use v11
     - npm ci --only=production
-    - npm install
+
+build_script:
+    - echo "nothing to build"
 
 # defined specific build configs for different branches
 for:
@@ -16,14 +16,33 @@ for:
     branches:
         only:
             - master
-    build_script:
-        - npm run publish_production
+    deploy_script:
+        - npm run publish-production
 -
     branches:
         only:
             - develop
+    install:
+        - nvm use v11
+        - npm ci --only=production
+        - git clone https://github.com/strawbees/code-ui.git
+        - cd code-ui
+        - git checkout develop
+        - npm link
+        - cd ..
+        - npm link @strawbees/code-ui
     build_script:
-        - npm run publish_stage
+        - npm run build-develop
+    deploy_script:
+        - npm run publish-develop
+-
+    branches:
+        only:
+            - /feature*/
+    environment:
+        S3_BUCKET: strawbees-test
+    deploy_script:
+        - npm run publish-stage
 
 # This will build based on `CONFIG` environment variable
 
@@ -35,3 +54,4 @@ branches:
     only:
         - master
         - develop
+        - /feature*/
