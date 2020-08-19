@@ -1,6 +1,6 @@
 {
   "name": "code-website",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "Website for Strawbees CODE",
   "main": "main.js",
   "scripts": {
