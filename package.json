@@ -1,6 +1,6 @@
 {
   "name": "code-website",
-  "version": "0.2.7",
+  "version": "0.2.9",
   "description": "Website for Strawbees CODE",
   "main": "main.js",
   "scripts": {
@@ -19,7 +19,11 @@
   },
   "homepage": "https://github.com/strawbees/code-website#readme",
   "dependencies": {
+<<<<<<< HEAD
     "@strawbees/code-ui": "1.10.6",
+=======
+    "@strawbees/code-ui": "1.10.5",
+>>>>>>> master
     "@strawbees/s3-publisher": "^0.1.2"
   }
 }
