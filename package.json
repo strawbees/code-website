@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/strawbees/code-website#readme",
   "dependencies": {
-    "@strawbees/code-ui": "1.10.3",
+    "@strawbees/code-ui": "1.10.6",
     "@strawbees/s3-publisher": "^0.1.2"
   }
 }
