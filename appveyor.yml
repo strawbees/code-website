@@ -24,7 +24,7 @@ for:
             - develop
     install:
         - nvm use v11
-        - npm ci --only=production
+        - npm install
         - git clone https://github.com/strawbees/code-ui.git
         - cd code-ui
         - git checkout develop
