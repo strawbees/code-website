@@ -4,7 +4,7 @@ platform:
     - x64
 
 install:
-    - nvm use v11
+    - nvm use v15
     - npm ci --only=production
 
 build_script:
