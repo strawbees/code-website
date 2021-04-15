@@ -19,12 +19,14 @@ for:
         only:
             - master
     deploy_script:
+        - nvm use 15
         - npm run publish-production
 -
     branches:
         only:
             - develop
     install:
+        - nvm use 15
         - npm install
         - git clone https://github.com/strawbees/code-ui.git
         - cd code-ui
