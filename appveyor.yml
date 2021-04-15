@@ -1,10 +1,12 @@
 image: Ubuntu1804
 
+environment:
+  nodejs_version: 15
+
 platform:
     - x64
 
 install:
-    - nvm use v15
     - npm ci --only=production
 
 build_script:
@@ -23,7 +25,6 @@ for:
         only:
             - develop
     install:
-        - nvm use v11
         - npm install
         - git clone https://github.com/strawbees/code-ui.git
         - cd code-ui
